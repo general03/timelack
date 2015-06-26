@@ -26,4 +26,4 @@ This personal project is also a good way to rampup on ReactJS
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
 --- | --- | --- | --- | --- |
-42 	&#10004;  | Latest  	&#10008;|9+   	&#10008;| Latest  	&#10008;| Latest  	&#10008;|
+42 	&#10004;  | 39+  	&#10008;|   	&#10008;| 29+  	&#10008;|   	&#10008;|
