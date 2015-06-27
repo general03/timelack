@@ -1,0 +1,447 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cate",
+				"category"
+			],
+			[
+				"sele",
+				"selectedIndex"
+			],
+			[
+				"input",
+				"inputTask"
+			],
+			[
+				"task",
+				"taskName"
+			],
+			[
+				"tas",
+				"tasks"
+			],
+			[
+				"categor",
+				"categories"
+			],
+			[
+				"ca",
+				"category"
+			],
+			[
+				"set",
+				"setState"
+			],
+			[
+				"han",
+				"handleUpdate"
+			],
+			[
+				"on",
+				"onFormSubmit"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"v",
+				"var"
+			],
+			[
+				"ite",
+				"items"
+			],
+			[
+				"pr",
+				"props"
+			],
+			[
+				"ts",
+				"taskName"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"Djan",
+				"DjangoFilterBackend"
+			],
+			[
+				"filter",
+				"filters"
+			],
+			[
+				"filt",
+				"filter"
+			],
+			[
+				"Ex",
+				"ExtractCss"
+			],
+			[
+				"id",
+				"id_css"
+			],
+			[
+				"content",
+				"content_type"
+			],
+			[
+				"com",
+				"common"
+			],
+			[
+				"e",
+				"engine"
+			],
+			[
+				"c",
+				"core"
+			],
+			[
+				"py",
+				"python"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"ho",
+				"HomeViewClass"
+			],
+			[
+				"w",
+				"Windows"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 7307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 350,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/timeline/beforeREST_index.html",
+		"/var/www/timeline/index.js",
+		"/var/www/timeline/index.html",
+		"/home/david/.virtualenvs/workshop_drf_env/workshop_drf/workshop_drf/todo/migrations/0001_initial.py",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/contact/home.html",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/roadmap/home.html",
+		"/home/david/Downloads/contact-form.php",
+		"/home/david/.virtualenvs/optimizercss/engine/models/extractcss.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/spiders/rigaudie.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/dev.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/prod.py",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/home/home.html",
+		"/home/david/.virtualenvs/optimizercss/gunicorn.log",
+		"/home/david/.virtualenvs/optimizercss/engine/static/css/base.css",
+		"/home/david/.virtualenvs/optimizercss/utils/deploy.sh",
+		"/home/david/.virtualenvs/optimizercss/engine/urls.py",
+		"/home/david/.virtualenvs/optimizercss/.gunicorn.log.swp",
+		"/home/david/.virtualenvs/optimizercss/engine/models/site.py",
+		"/home/david/.virtualenvs/optimizercss/utils/django.fcgi",
+		"/home/david/.virtualenvs/optimizercss/settings/linux.py",
+		"/home/david/.virtualenvs/optimizercss/settings/alwaysdata-EN.py",
+		"/home/david/.virtualenvs/optimizercss/settings/alwaysdata.py",
+		"/home/david/.virtualenvs/optimizercss/settings/app.py",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/dashboard/home.html",
+		"/home/david/.virtualenvs/optimizercss/settings/prod.py",
+		"/home/david/.virtualenvs/optimizercss/engine/views/home.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/pipelines.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/settings/dev.py",
+		"/home/david/.virtualenvs/optimizercss/scrapy.cfg",
+		"/home/david/.virtualenvs/optimizercss/engine/views/dashboard.py",
+		"/home/david/.virtualenvs/optimizercss/crawler/settings.py",
+		"/home/david/.virtualenvs/optimizercss/wsgi.wsgi",
+		"/home/david/.virtualenvs/optimizercss/crawler/templates/spiders/advanced.tmpl",
+		"/home/david/.virtualenvs/optimizercss/settings/scrapy.cfg",
+		"/home/david/.virtualenvs/optimizercss/local_settings.py",
+		"/home/david/.virtualenvs/optimizercss/engine/context_processors.py",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/base.html",
+		"/home/david/.virtualenvs/optimizercss/engine/views/common.py",
+		"/home/david/.virtualenvs/optimizercss/engine/views/context_processors.py",
+		"/home/david/.virtualenvs/optimizercss/settings/__init__.py",
+		"/home/david/.virtualenvs/optimizercss/OLDwsgi.py",
+		"/home/david/.virtualenvs/optimizercss/utils/OLDdjango.wsgi",
+		"/home/david/.virtualenvs/optimizercss/deploy.sh",
+		"/home/david/.virtualenvs/optimizercss/utils/django.wsgi",
+		"/home/david/.virtualenvs/optimizercss/engine/views/about.py",
+		"/home/david/.virtualenvs/optimizercss/engine/views/homeviewclass.py",
+		"/home/david/.virtualenvs/optimizercss/engine/templates/home.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"~/.virtualenvs"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"form",
+			"aTask",
+			"alert",
+			"onAddTaskToList",
+			"onUpdateList",
+			"bind",
+			"onAddTaskToList",
+			"onUpdateList",
+			"onUpdateListForListTask",
+			"concat",
+			"hr",
+			"handleUpdate",
+			"onNewTaskSubmit",
+			"setState",
+			"Category",
+			"props.task.ma",
+			"props.task.na",
+			"TaskList",
+			"props.task.m",
+			"category",
+			"NewTask",
+			"setState",
+			"map",
+			"items\nitem",
+			"items\nitems",
+			"items",
+			"(\n",
+			"this.props.data",
+			"tasks",
+			".task",
+			"text",
+			"this",
+			"engine.models.customerprofile.Custom",
+			"urls",
+			"site",
+			"css",
+			"Css(",
+			"CssItem",
+			"__stylesheets",
+			"__blocks",
+			"Extractcs",
+			"extract",
+			"extr",
+			"print",
+			"__blocks",
+			"ruleset",
+			"protocol",
+			"os",
+			"size",
+			"fileSize",
+			"mail",
+			"checkbox",
+			"link-download",
+			"result_last_url",
+			"70",
+			"footer",
+			"header",
+			"article",
+			"header",
+			"is_used",
+			"scanCssOfSite",
+			"extra",
+			"mimety",
+			"content_type",
+			"mimety",
+			"is_used",
+			"site",
+			"ooter"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"settings":
+					{
+						"buffer_size": 7307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2569,
+								2569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1040.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"base.css",
+				"engine/static/css/base.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true
+}

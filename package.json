@@ -1,0 +1,10 @@
+{
+  "name": "timelack",
+  "description": "Allow to display all the information aboit the daily job task",
+  "version": "0.1.0",
+  "dependencies": {
+    "babel-es6-polyfill": "~1.0.1",
+    "requirejs": "~2.1.18",
+    "react": "~0.13.3"
+  }
+}
