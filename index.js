@@ -3,13 +3,24 @@ require.config({
   paths: {
     "babel-core": "babel-core/browser-polyfill.min",
     //"polyfill": "babel-es6-polyfill/browser-polyfill"
-    "reactjs": "react/dist/react.min",
-    "JSX": "react/dist/JSXTransformer"
+    "JSXTransformer": "react/dist/JSXTransformer",
+    "reactjs": "react/dist/react.min"
+  },
+  shim: {
+    'babel-core': {
+      exports: 'babel'
+    },
+    'reactjs': {
+      deps: ['babel-core', 'JSXTransformer'],
+      exports: 'React',
+    },
+    'JSXTransformer': {
+      exports: 'JSXTransformer'
+    }
   }
 });
 //import React from 'react/dist/react.min';
-//var React = require('react/dist/react.min');
-require(['babel-core'], function(babel){
+require(['babel-core', 'reactjs'], function(babel, React){
 
   // URL for tasks, API RESTful
   var urlTask = "http://127.0.0.1:9000/task";
@@ -75,7 +86,7 @@ require(['babel-core'], function(babel){
           return (
             <form onSubmit={this.handleSubmit} >
 
-              <Task ref="newTaskInForm" items={emptyArray} onChange={this.onTaskChange} classStyle="newTask" />
+              <Task ref="newTaskInForm" items={emptyArray} onChange={this.onTaskChange} classStyle="new-task__task" />
 
               <Category items={this.state.tasks} onChange={this.onCategoryChange}/>
 
@@ -206,7 +217,7 @@ var ListTask = React.createClass({
 
         <h4>{category.name}</h4>
 
-        <Task classStyle="listTask" items={category.tasks} onChange={this.onTaskChange.bind(this, i, category)}/>
+        <Task classStyle="list-task__task" items={category.tasks} onChange={this.onTaskChange.bind(this, i, category)}/>
 
         <hr/>
 

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin"
+			],
+			[
+				"list",
+				"list"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
 				"cate",
 				"category"
 			],
@@ -54,10 +66,6 @@
 			[
 				"v",
 				"var"
-			],
-			[
-				"ite",
-				"items"
 			],
 			[
 				"pr",
@@ -135,7 +143,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 7307,
+				"buffer_size": 6388,
 				"line_ending": "Unix"
 			}
 		},
@@ -143,7 +151,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 350,
+				"buffer_size": 494,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,6 +180,7 @@
 	},
 	"file_history":
 	[
+		"/var/www/timeline/package.json",
 		"/var/www/timeline/beforeREST_index.html",
 		"/var/www/timeline/index.js",
 		"/var/www/timeline/index.html",
@@ -237,6 +246,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"classStyle",
+			"currentTask",
+			"Object.assign",
+			"onAddTaskToList",
 			"form",
 			"aTask",
 			"alert",
@@ -322,7 +335,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -330,15 +343,15 @@
 					"file": "index.js",
 					"settings":
 					{
-						"buffer_size": 7307,
+						"buffer_size": 6388,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2569,
-								2569
+								363,
+								363
 							]
 						],
 						"settings":
@@ -348,7 +361,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1040.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -358,20 +371,22 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 350,
+						"buffer_size": 494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								266
+								31,
+								31
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
