@@ -2,7 +2,6 @@ require.config({
   baseUrl : "node_modules",
   paths: {
     "babel-core": "babel-core/browser-polyfill.min",
-    //"polyfill": "babel-es6-polyfill/browser-polyfill"
     "JSXTransformer": "react/dist/JSXTransformer",
     "reactjs": "react/dist/react.min"
   },
@@ -31,33 +30,33 @@ require(['babel-core', 'reactjs'], function(babel, React){
     getInitialState () {
       return {
         tasks: this.props.items,
-            // Update the value in the state (ES6)
-            category: Object.assign({}, this.props.items[0], {selectedIndex: 0}), 
-            task: [{}]
-          }
+        // Update the value in the state (ES6)
+        category: Object.assign({}, this.props.items[0], {selectedIndex: 0}), 
+        task: [{}]
+      }
+    },
+    handleSubmit (event) {
+      event.preventDefault();
+
+      var _this = this;
+      var idTask = this.state.task.id;
+      var item = {owner: "david", name: this.state.task.name, categories: [this.state.category.name]};
+
+      fetch(`${urlTask}/`, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
         },
-        handleSubmit (event) {
-          event.preventDefault();
+        body: JSON.stringify(item)
+      })
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(body) {
+        console.log(body);
 
-          var _this = this;
-          var idTask = this.state.task.id;
-          var item = {owner: "david", name: this.state.task.name, categories: [this.state.category.name]};
-
-          fetch(`${urlTask}/`, {
-            method: "POST",
-            headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(item)
-          })
-          .then(function(response) {
-            return response.json()
-          })
-          .then(function(body) {
-            console.log(body);
-
-            alert("Saving success");
+        alert("Saving success");
 
               // Add task to the list
               item.id = body.id;
@@ -69,31 +68,31 @@ require(['babel-core', 'reactjs'], function(babel, React){
               // Empty the input field
               React.findDOMNode(_this.refs.newTaskInForm.refs.inputTask).value = ""; 
             })
-          .catch(function(e){alert("Error saving!");console.log(e)});
+      .catch(function(e){alert("Error saving!");console.log(e)});
 
 
-        },
+    },
 
-        onTaskChange (indexCat, taskName) {
-          this.setState({ task: {name: taskName} });
-        },
-        onCategoryChange (idCategory, categoryName, selectedOption) {console.log(idCategory, categoryName, selectedOption)
-          this.setState({ category: {id: idCategory, name: categoryName, selectedIndex: selectedOption} });
-        },
-        render () { 
-          var emptyArray = [{}];
+    onTaskChange (indexCat, taskName) {
+      this.setState({ task: {name: taskName} });
+    },
+    onCategoryChange (idCategory, categoryName, selectedOption) {
+      this.setState({ category: {id: idCategory, name: categoryName, selectedIndex: selectedOption} });
+    },
+    render () { 
+      var emptyArray = [{}];
 
-          return (
-            <form onSubmit={this.handleSubmit} >
+      return (
+        <form onSubmit={this.handleSubmit} >
 
-              <Task ref="newTaskInForm" items={emptyArray} onChange={this.onTaskChange} classStyle="new-task__task" />
+        <Task ref="newTaskInForm" items={emptyArray} onChange={this.onTaskChange} classStyle="new-task__task" />
 
-              <Category items={this.state.tasks} onChange={this.onCategoryChange}/>
+        <Category items={this.state.tasks} onChange={this.onCategoryChange}/>
 
-            </form>
-            );
-        }
-      });
+        </form>
+        );
+    }
+  });
 
 
 var Category = React.createClass({
@@ -250,15 +249,15 @@ var TimeLack = React.createClass({
     return (
       <div>
 
-        <fieldset>
+      <fieldset>
 
-          <legend>Add task :</legend>
-          
-          <NewTask items={this.state.tasks} onAddTaskToList={this.onUpdateList}/>
-        
-        </fieldset>
+      <legend>Add task :</legend>
+      
+      <NewTask items={this.state.tasks} onAddTaskToList={this.onUpdateList}/>
+      
+      </fieldset>
 
-        <ListTask items={this.state.tasks} />
+      <ListTask items={this.state.tasks} />
 
       </div>
       );
@@ -278,6 +277,9 @@ fetch(`${urlCat}/?format=json`)
     document.getElementById('timelack')
     );
 })
-.catch(function(e){alert("error");console.log(e)});
+.catch(function(e){
+  alert("error");
+  console.log(e)
+});
 
 });

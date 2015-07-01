@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"react",
+				"reactjs"
+			],
+			[
 				"mar",
 				"margin"
 			],
@@ -143,7 +147,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 6388,
+				"buffer_size": 6549,
 				"line_ending": "Unix"
 			}
 		},
@@ -151,7 +155,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 494,
+				"buffer_size": 449,
 				"line_ending": "Unix"
 			}
 		}
@@ -246,6 +250,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"jsx",
+			"class",
 			"classStyle",
 			"currentTask",
 			"Object.assign",
@@ -335,7 +341,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -343,15 +349,15 @@
 					"file": "index.js",
 					"settings":
 					{
-						"buffer_size": 6388,
+						"buffer_size": 6549,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								363,
-								363
+								192,
+								192
 							]
 						],
 						"settings":
@@ -371,7 +377,7 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 494,
+						"buffer_size": 449,
 						"regions":
 						{
 						},
