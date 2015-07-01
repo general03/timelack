@@ -18,12 +18,44 @@ require.config({
     }
   }
 });
-//import React from 'react/dist/react.min';
+
 require(['babel-core', 'reactjs'], function(babel, React){
 
   // URL for tasks, API RESTful
   var urlTask = "http://127.0.0.1:9000/task";
   var urlCat = "http://127.0.0.1:9000/category";
+
+
+  var TimeLack = React.createClass({
+
+    getInitialState () {
+      return {tasks: this.props.items};
+    },
+
+    onUpdateList (items) {
+      this.setState({ tasks: items });
+    },
+
+    render () {
+
+      return (
+        <div>
+
+          <fieldset>
+
+          <legend>Add task :</legend>
+
+            <NewTask items={this.state.tasks} onAddTaskToList={this.onUpdateList}/>
+
+          </fieldset>
+
+          <ListTask items={this.state.tasks} />
+
+        </div>
+      );
+    }
+  });
+
 
   var NewTask = React.createClass({
 
@@ -35,6 +67,7 @@ require(['babel-core', 'reactjs'], function(babel, React){
         task: [{}]
       }
     },
+
     handleSubmit (event) {
       event.preventDefault();
 
@@ -58,27 +91,28 @@ require(['babel-core', 'reactjs'], function(babel, React){
 
         alert("Saving success");
 
-              // Add task to the list
-              item.id = body.id;
-              var result = _this.state.tasks[_this.state.category.selectedIndex].tasks.concat(item);
-              _this.state.tasks[_this.state.category.selectedIndex].tasks = result;
+        // Add task to the list
+        item.id = body.id;
+        var result = _this.state.tasks[_this.state.category.selectedIndex].tasks.concat(item);
+        _this.state.tasks[_this.state.category.selectedIndex].tasks = result;
 
-              _this.props.onAddTaskToList(_this.state.tasks);
+        _this.props.onAddTaskToList(_this.state.tasks);
 
-              // Empty the input field
-              React.findDOMNode(_this.refs.newTaskInForm.refs.inputTask).value = ""; 
-            })
+        // Empty the input field
+        React.findDOMNode(_this.refs.newTaskInForm.refs.inputTask).value = ""; 
+      })
       .catch(function(e){alert("Error saving!");console.log(e)});
-
 
     },
 
     onTaskChange (indexCat, taskName) {
       this.setState({ task: {name: taskName} });
     },
+
     onCategoryChange (idCategory, categoryName, selectedOption) {
       this.setState({ category: {id: idCategory, name: categoryName, selectedIndex: selectedOption} });
     },
+
     render () { 
       var emptyArray = [{}];
 
@@ -90,196 +124,166 @@ require(['babel-core', 'reactjs'], function(babel, React){
         <Category items={this.state.tasks} onChange={this.onCategoryChange}/>
 
         </form>
-        );
+      );
     }
   });
 
 
-var Category = React.createClass({
+  var Task = React.createClass({
 
-  getInitialState () {
-    return {categories: this.props.items};
-  },
+    getInitialState () {
+      var taskContent = this.props.items;
+      if(this.props.items == undefined)
+        taskContent = [{}];
+      return {tasks: taskContent};
+    },
 
-  onFormChange (event) {
-    this.props.onChange(event.target.value, event.target.options[event.target.selectedIndex].text, event.target.selectedIndex);
-  },
+    onFormChange (i, event) {
+      this.props.onChange(i, event.target.value);
+    },
 
-  render () {
-    var categoryNodes = this.state.categories.map(function (category) {
-      return(
-        <option value={category.id}>{category.name}</option>
-        )
-    });
+    render () {
+      if(this.props.items.length > 0)
+      {
+        var taskNodes = this.props.items.map(function (task, i) {
+          return(
+           <input type="text" 
+             ref="inputTask"
+             defaultValue={task.name}
+             value={task.name}
+             onChange={this.onFormChange.bind(this, i)}
+             placeholder="Custom task"
+             className={this.props.classStyle} />
+          )
+        }.bind(this));
 
-    return (
-      <div>
+        return (
+          <div>
+            {taskNodes}
+          </div>
+        );
+      }
+      else
+      {
+        return(<h5>No task available</h5>);
+      }
+    }
+  });
 
-      <label>Category : </label>
+  
+  var Category = React.createClass({
 
-      <select onChange={this.onFormChange} >
-      {categoryNodes}
-      </select>
+    getInitialState () {
+      return {categories: this.props.items};
+    },
 
-      </div>
+    onFormChange (event) {
+      this.props.onChange(
+        event.target.value, 
+        event.target.options[event.target.selectedIndex].text, 
+        event.target.selectedIndex
       );
-  }
-});
+    },
 
-
-var Task = React.createClass({
-
-  getInitialState () {
-    var taskContent = this.props.items;
-    if(this.props.items == undefined)
-      taskContent = [{}];
-    return {tasks: taskContent};
-  },
-
-  onFormChange (i, event) {
-    this.props.onChange(i, event.target.value);
-  },
-
-  render () {
-    if(this.props.items.length > 0)
-    {
-      var taskNodes = this.props.items.map(function (task, i) {
+    render () {
+      var categoryNodes = this.state.categories.map(function (category) {
         return(
-         <input type="text" 
-         ref="inputTask"
-         defaultValue={task.name}
-         value={task.name}
-         onChange={this.onFormChange.bind(this, i)}
-         placeholder="Custom task"
-         className={this.props.classStyle} />
-         )
+          <option value={category.id}>{category.name}</option>
+        )
+      });
+
+      return (
+        <div>
+
+          <label>Category : </label>
+
+          <select onChange={this.onFormChange} >
+            {categoryNodes}
+          </select>
+
+        </div>
+      );
+    }
+  });
+
+
+  var ListTask = React.createClass({
+
+    getInitialState () {
+      return {tasks: this.props.items};
+    },
+
+    onTaskChange (indexCat, category, indexTask, taskName) {
+      var _this = this;
+      var _indexCat = indexCat;
+      var _indexTask = indexTask;
+
+      this.state.tasks[indexCat].tasks[indexTask].name = taskName;
+
+      var item = Object.assign({}, this.state.tasks[indexCat].tasks[indexTask], {owner: "david"});
+
+      fetch(`${urlTask}/${item.id}/`, {
+        method: "PUT",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(item)
+      })
+      .then(function(response) {
+        return response.json()
+      })  
+      .then(function(body) {
+        console.log(body);
+
+        var allItems = Object.assign({}, _this.state.tasks[_indexCat].tasks[_indexTask], body);
+        _this.setState({ tasks: _this.state.tasks});
+
+        alert("Saving success");             
+      })
+      .catch(function(e){alert("Error saving!");console.log(e)});
+    },
+
+    render () {
+
+      var tasksList = this.state.tasks.map(function (category, i) {
+
+        return (
+          <div>
+
+            <h4>{category.name}</h4>
+
+            <Task classStyle="list-task__task" items={category.tasks} onChange={this.onTaskChange.bind(this, i, category)}/>
+
+            <hr/>
+
+          </div>
+        );
       }.bind(this));
 
-      return (
+      return(
         <div>
-        {taskNodes}
-        </div>
-        );
-    }
-    else
-    {
-      return(<h5>No task available</h5>);
-    }
-  }
-});
-
-
-var ListTask = React.createClass({
-
-  getInitialState () {
-    return {tasks: this.props.items};
-  },
-
-
-  onTaskChange (indexCat, category, indexTask, taskName) {
-    var _this = this;
-    var _indexCat = indexCat;
-    var _indexTask = indexTask;
-
-    this.state.tasks[indexCat].tasks[indexTask].name = taskName;
-
-    var item = Object.assign({}, this.state.tasks[indexCat].tasks[indexTask], {owner: "david"});
-
-    fetch(`${urlTask}/${item.id}/`, {
-      method: "PUT",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(item)
-    })
-    .then(function(response) {
-      return response.json()
-    })  
-    .then(function(body) {
-      console.log(body);
-
-      var allItems = Object.assign({}, _this.state.tasks[_indexCat].tasks[_indexTask], body);
-      _this.setState({ tasks: _this.state.tasks});
-
-      alert("Saving success");             
-    })
-    .catch(function(e){alert("Error saving!");console.log(e)});
-  },
-
-  render () {
-
-    var tasksList = this.state.tasks.map(function (category, i) {
-
-      return (
-        <div>
-
-        <h4>{category.name}</h4>
-
-        <Task classStyle="list-task__task" items={category.tasks} onChange={this.onTaskChange.bind(this, i, category)}/>
-
-        <hr/>
-
-        </div>
-        );
-    }.bind(this));
-
-    return(
-      <div>
-      {tasksList}
-      </div>  
+          {tasksList}
+        </div>  
       );
-  }
-});
+    }
+  });
 
-var TimeLack = React.createClass({
+  fetch(`${urlCat}/?format=json`)
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(body) {
+    console.log(body);
 
-  getInitialState () {
-    return {tasks: this.props.items};
-  },
-
-  onUpdateList (items) {
-
-    this.setState({ tasks: items });
-
-  },
-
-  render () {
-
-    return (
-      <div>
-
-      <fieldset>
-
-      <legend>Add task :</legend>
-      
-      <NewTask items={this.state.tasks} onAddTaskToList={this.onUpdateList}/>
-      
-      </fieldset>
-
-      <ListTask items={this.state.tasks} />
-
-      </div>
+    React.render(
+      <TimeLack items={body}/>,
+      document.getElementById('timelack')
       );
-
-  }
-});
-
-fetch(`${urlCat}/?format=json`)
-.then(function(response) {
-  return response.json()
-})
-.then(function(body) {
-  console.log(body);
-
-  React.render(
-    <TimeLack items={body}/>,
-    document.getElementById('timelack')
-    );
-})
-.catch(function(e){
-  alert("error");
-  console.log(e)
-});
+  })
+  .catch(function(e){
+    alert("error");
+    console.log(e)
+  });
 
 });
